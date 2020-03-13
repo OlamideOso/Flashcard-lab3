@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
         flashcardDatabase = new FlashcardDatabase(getApplicationContext());
         allFlashcards = flashcardDatabase.getAllCards();
-        Log.d("MainActivity", String.valueOf(allFlashcards.size()));
+        Log.d("ActivityMain", String.valueOf(allFlashcards.size()));
         if (allFlashcards != null && allFlashcards.size() > 0) {
             ((TextView) findViewById(R.id.flashcard_question)).setText(allFlashcards.get(0).getQuestion());
             ((TextView) findViewById(R.id.textView2)).setText(allFlashcards.get(0).getAnswer());
