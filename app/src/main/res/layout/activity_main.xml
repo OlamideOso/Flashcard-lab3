@@ -13,7 +13,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="46dp"
-        android:text="@string/text_content"
+        android:text=""
         android:textSize="40sp" />
 
     <TextView
@@ -22,11 +22,36 @@
         android:layout_height="124dp"
         android:layout_alignEnd="@+id/flashcard_question"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="195dp"
-        android:layout_marginEnd="49dp"
-        android:text="Barack Obama"
+        android:layout_marginBottom="108dp"
+        android:text=""
         android:textSize="40sp"
         android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/addbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="12dp"
+        android:drawableLeft="@drawable/ic_iconmonstr_plus_circle_thin"
+        android:visibility="visible"
+        android:background="@android:color/transparent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/nextbutton"
+        android:layout_width="33dp"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/addbutton"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="239dp"
+        android:background="@android:color/transparent"
+        android:drawableLeft="@drawable/ic_iconmonstr_arrow_28"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </RelativeLayout>
