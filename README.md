@@ -7,7 +7,7 @@ Adding animations
 ### App Walk-though
 
 
-<img src= https://media.giphy.com/media/cMDSHzpTTlTklTZiNE/giphy.gifwidth=200><br>
+<img src= "https://media.giphy.com/media/cMDSHzpTTlTklTZiNE/giphy.gif" width=200><br>
 
 
 ## Required
