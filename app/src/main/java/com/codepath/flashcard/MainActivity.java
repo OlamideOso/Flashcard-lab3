@@ -1,10 +1,14 @@
 package com.codepath.flashcard;
 
+import android.animation.Animator;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewAnimationUtils;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -36,14 +40,35 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+        View answerSideView = findViewById(R.id.textView2);
+
+        // get the center for the clipping circle
+        int cx = answerSideView.getWidth() / 2;
+        int cy = answerSideView.getHeight() / 2;
+
+        // get the final radius for the clipping circle
+        float finalRadius = (float) Math.hypot(cx, cy);
+
+        // create the animator for this view (the start radius is zero)
+        Animator anim = ViewAnimationUtils.createCircularReveal(answerSideView, cx, cy, 0f, finalRadius);
+
+        // hide the question and show the answer to prepare for playing the animation!
+        findViewById(R.id.flashcard_question).setVisibility(View.INVISIBLE);
+        answerSideView.setVisibility(View.VISIBLE);
+
+        anim.setDuration(3000);
+        anim.start();
         findViewById(R.id.addbutton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, AddCardActivity.class);
                 MainActivity.this.startActivityForResult(intent,100);
+                startActivity(intent);
+                overridePendingTransition(R.anim.right_in, R.anim.left_out);
                 findViewById(R.id.nextbutton).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
                         // advance our pointer index so we can show the next card
                         currentCardDisplayedIndex++;
 
