@@ -2,7 +2,7 @@
 ## Lab 4
 
 ### App Description
-Adding animations 
+Flashacard App to help students study for exams! 
 
 ### App Walk-though
 
